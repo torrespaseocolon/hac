@@ -110,20 +110,14 @@
 
     const android = /android/i.test(userAgent);
 
-    if (ios) {
-        setTimeout(function() {
-            window.location.href =
-                "https://apps.apple.com/cr/app/hac/id1489818039";
-        }, 1000);
-    }
+   if (ios) {
+    window.location.replace(
+        "https://apps.apple.com/cr/app/hac/id1489818039"
+    );
+}
 
-    if (android) {
-        setTimeout(function() {
-            window.location.href =
-                "https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR";
-        }, 1000);
-    }
-</script>
-
-</body>
-</html>
+if (android) {
+    window.location.replace(
+        "https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR"
+    );
+}
