@@ -105,19 +105,27 @@
 <script>
     const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
+   <script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
     const ios = /iPad|iPhone|iPod/.test(userAgent) ||
                 (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
 
     const android = /android/i.test(userAgent);
 
-   if (ios) {
-    window.location.replace(
-        "https://apps.apple.com/cr/app/hac/id1489818039"
-    );
-}
+    if (ios) {
+        setTimeout(function() {
+            window.location.replace(
+                "https://apps.apple.com/cr/app/hac/id1489818039"
+            );
+        }, 1000);
+    }
 
-if (android) {
-    window.location.replace(
-        "https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR"
-    );
-}
+    if (android) {
+        setTimeout(function() {
+            window.location.replace(
+                "https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR"
+            );
+        }, 1000);
+    }
+</script>
