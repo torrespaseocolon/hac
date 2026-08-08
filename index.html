@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Descargar HAC</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background: white;
+            max-width: 450px;
+            width: 90%;
+            padding: 40px 25px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            font-size: 32px;
+        }
+
+        p {
+            color: #555;
+            font-size: 17px;
+            line-height: 1.5;
+        }
+
+        .loading {
+            margin: 30px 0;
+            font-size: 18px;
+        }
+
+        .button {
+            display: block;
+            text-decoration: none;
+            padding: 16px;
+            margin: 15px 0;
+            border-radius: 10px;
+            font-size: 17px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .ios {
+            background: #000000;
+        }
+
+        .android {
+            background: #34a853;
+        }
+
+        .small {
+            font-size: 13px;
+            color: #888;
+            margin-top: 25px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Descarga HAC</h1>
+
+    <p>
+        Estamos detectando tu dispositivo
+        para enviarte a la tienda correspondiente.
+    </p>
+
+    <div class="loading">
+        Redirigiendo...
+    </div>
+
+    <a class="button ios"
+       href="https://apps.apple.com/cr/app/hac/id1489818039">
+        🍎 Descargar para iPhone / iPad
+    </a>
+
+    <a class="button android"
+       href="https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR">
+        🤖 Descargar para Android
+    </a>
+
+    <p class="small">
+        Si la redirección automática no funciona,
+        selecciona tu dispositivo arriba.
+    </p>
+
+</div>
+
+<script>
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    const ios = /iPad|iPhone|iPod/.test(userAgent) ||
+                (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+
+    const android = /android/i.test(userAgent);
+
+    if (ios) {
+        setTimeout(function() {
+            window.location.href =
+                "https://apps.apple.com/cr/app/hac/id1489818039";
+        }, 1000);
+    }
+
+    if (android) {
+        setTimeout(function() {
+            window.location.href =
+                "https://play.google.com/store/apps/details?id=com.perspective.hac&hl=es_CR";
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
